@@ -1,7 +1,5 @@
-var keycode = require('keycode')
-
 const keyMapping = {
-  "81": "ㅃ",
+  "113": "ㅃ",
   "87": "ㅉ"
 }
 
