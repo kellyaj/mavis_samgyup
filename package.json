@@ -11,6 +11,7 @@
     "babel-preset-es2016": "6.11.3",
     "babel-preset-react": "6.11.1",
     "css-loader": "0.23.1",
+    "hangul-js": "0.2.2",
     "lodash": "4.16.6",
     "postcss-loader": "0.9.1",
     "react": "15.3.2",

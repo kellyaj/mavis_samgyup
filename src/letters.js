@@ -1,4 +1,4 @@
-const keyMapping = {
+const keyPressKeyMapping = {
   "113": "ㅂ",
   "81" : "ㅃ",
   "119": "ㅈ",
@@ -34,4 +34,40 @@ const keyMapping = {
   "109": "ㅡ",
 }
 
-module.exports = keyMapping
+const keyDownKeyMapping = {
+  "q": "ㅂ",
+  "Q" : "ㅃ",
+  "w": "ㅈ",
+  "W" : "ㅉ",
+  "e": "ㄷ",
+  "E" : "ㄸ",
+  "r": "ㄱ",
+  "R" : "ㄲ",
+  "t": "ㅅ",
+  "T" : "ㅆ",
+  "y": "ㅛ",
+  "u": "ㅕ",
+  "i": "ㅑ",
+  "o": "ㅐ", // need alt
+  "O" : "",
+  "p": "ㅔ", // need alt
+  "P" : "",
+  "a" : "ㅁ",
+  "s": "ㄴ",
+  "d": "ㅇ",
+  "f": "ㄹ",
+  "g": "ㅎ",
+  "h": "ㅗ",
+  "j": "ㅓ",
+  "k": "ㅏ",
+  "l": "ㅣ",
+  "z": "ㅋ",
+  "x": "ㅌ",
+  "c" : "ㅊ",
+  "v": "ㅍ",
+  "b" : "ㅠ",
+  "n": "ㅜ",
+  "m": "ㅡ",
+}
+
+module.exports = keyDownKeyMapping
