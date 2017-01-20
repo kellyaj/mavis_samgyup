@@ -46,8 +46,10 @@ class App extends Component {
     const newChallengeIndex = this.state.currentChallengeIndex += 1
     this.setState({
       currentChallengeIndex: newChallengeIndex,
-      currentChallengeContent: this.props.challenges[newChallengeIndex]
+      currentChallengeContent: this.props.challenges[newChallengeIndex],
+      enteredText: ""
     })
+    this.refs.challengeInput.value = ""
   }
 
   render() {
@@ -59,7 +61,7 @@ class App extends Component {
           nextChallengeHandler={this.nextChallenge.bind(this)}
         />
         <h1>{ this.state.enteredText }</h1>
-        <input type="text" onKeyDown={this.handleKeyPress.bind(this)} />
+        <input type="text" onKeyDown={this.handleKeyPress.bind(this)} ref="challengeInput"/>
       </div>
     )
   }
