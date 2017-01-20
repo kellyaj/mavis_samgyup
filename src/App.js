@@ -3,15 +3,18 @@ import _ from 'lodash'
 import Hangul from 'hangul-js'
 import letters from './letters'
 import ChallengeContent from './ChallengeContent'
+import ChallengeOptions from './ChallengeOptions'
+import NoticeArea from './NoticeArea'
 
 class App extends Component {
   componentWillMount() {
     if(this.state === null) {
       this.setState({
-        "currentChallengeIndex": 0,
-        "noRemainingChallenges": false,
-        "enteredText": "",
-        "currentChallengeContent": this.props.challenges[0]
+        currentChallengeIndex: 0,
+        noRemainingChallenges: false,
+        enteredText: "",
+        currentChallengeContent: this.props.challenges[0],
+        noticeMessage: "",
       })
     }
   }
@@ -58,6 +61,7 @@ class App extends Component {
   startOver() {
     this.refs.challengeInput.value = ""
     this.setState({
+      noticeMessage: "Restarting with the first challenge",
       currentChallengeIndex: "",
       enteredText: "",
       currentChallengeContent: this.props.challenges[0],
@@ -68,6 +72,12 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
+        <NoticeArea
+          message={this.state.noticeMessage}
+        />
+        <ChallengeOptions
+          startOverHandler={this.startOver.bind(this)}
+        />
         <ChallengeContent
           challengeContent={this.state.currentChallengeContent}
           enteredText={this.state.enteredText}
