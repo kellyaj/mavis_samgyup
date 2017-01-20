@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import _ from 'lodash'
 import Hangul from 'hangul-js'
 import letters from './letters'
+import ChallengeContent from './ChallengeContent'
 
 class App extends Component {
   componentWillMount() {
     if(this.state === null) {
       this.setState({
-        "enteredText": ""
+        "currentChallengeIndex": 0,
+        "enteredText": "",
+        "currentChallengeContent": this.props.challenges[0]
       })
     }
   }
@@ -39,10 +42,22 @@ class App extends Component {
     }
   }
 
+  nextChallenge() {
+    const newChallengeIndex = this.state.currentChallengeIndex += 1
+    this.setState({
+      currentChallengeIndex: newChallengeIndex,
+      currentChallengeContent: this.props.challenges[newChallengeIndex]
+    })
+  }
+
   render() {
     return (
       <div className="app-container">
-        <h1>바나나</h1>
+        <ChallengeContent
+          challengeContent={this.state.currentChallengeContent}
+          enteredText={this.state.enteredText}
+          nextChallengeHandler={this.nextChallenge.bind(this)}
+        />
         <h1>{ this.state.enteredText }</h1>
         <input type="text" onKeyDown={this.handleKeyPress.bind(this)} />
       </div>
