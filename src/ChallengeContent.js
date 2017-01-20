@@ -8,6 +8,8 @@ class ChallengeContent extends Component {
       return (
         <ChallengeSuccess
           nextChallengeHandler={this.props.nextChallengeHandler}
+          startOverHandler={this.props.startOverHandler}
+          noRemainingChallenges={this.props.noRemainingChallenges}
         />
       )
     } else {

@@ -9,6 +9,7 @@ class App extends Component {
     if(this.state === null) {
       this.setState({
         "currentChallengeIndex": 0,
+        "noRemainingChallenges": false,
         "enteredText": "",
         "currentChallengeContent": this.props.challenges[0]
       })
@@ -27,15 +28,15 @@ class App extends Component {
     const korChar = letters[e.key]
     if(e.key == "Backspace") {
       this.setState({
-        "enteredText": this.assembleHangul(this.state.enteredText.slice(0, -1))
+        enteredText: this.assembleHangul(this.state.enteredText.slice(0, -1))
       })
     } else if (this.allowedCharacter(e.key)) {
       this.setState({
-        "enteredText": this.assembleHangul(this.state.enteredText += e.key)
+        enteredText: this.assembleHangul(this.state.enteredText += e.key)
       })
     } else if (korChar) {
       this.setState({
-        "enteredText": this.assembleHangul(this.state.enteredText += korChar)
+        enteredText: this.assembleHangul(this.state.enteredText += korChar)
       })
     } else {
       // do nothing
@@ -43,13 +44,25 @@ class App extends Component {
   }
 
   nextChallenge() {
+    this.refs.challengeInput.value = ""
     const newChallengeIndex = this.state.currentChallengeIndex += 1
+    const noChallenges = newChallengeIndex === (this.props.challenges.length - 1)
     this.setState({
       currentChallengeIndex: newChallengeIndex,
       currentChallengeContent: this.props.challenges[newChallengeIndex],
-      enteredText: ""
+      enteredText: "",
+      noRemainingChallenges: noChallenges
     })
+  }
+
+  startOver() {
     this.refs.challengeInput.value = ""
+    this.setState({
+      currentChallengeIndex: "",
+      enteredText: "",
+      currentChallengeContent: this.props.challenges[0],
+      noRemainingChallanges: false
+    })
   }
 
   render() {
@@ -58,7 +71,9 @@ class App extends Component {
         <ChallengeContent
           challengeContent={this.state.currentChallengeContent}
           enteredText={this.state.enteredText}
+          noRemainingChallenges={this.state.noRemainingChallenges}
           nextChallengeHandler={this.nextChallenge.bind(this)}
+          startOverHandler={this.startOver.bind(this)}
         />
         <h1>{ this.state.enteredText }</h1>
         <input type="text" onKeyDown={this.handleKeyPress.bind(this)} ref="challengeInput"/>
