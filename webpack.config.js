@@ -1,5 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var bourbon = require('node-bourbon').includePaths;
+var neat = require('node-neat').includePaths[1];
 
 var BUILD_DIR = path.resolve(__dirname + '/build')
 var SRC_DIR = path.resolve(__dirname + '/src')
@@ -28,10 +31,13 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         include: path.resolve(__dirname, './src/styles'),
-        loader: 'style!css!postcss',
+        loader: "style!css!sass?includePaths[]=" + bourbon + "&includePaths[]=" + neat
       }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('../../../build/styles.css')
+  ]
 }
