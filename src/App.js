@@ -5,6 +5,7 @@ import letters from './letters'
 import ChallengeContent from './ChallengeContent'
 import ChallengeOptions from './ChallengeOptions'
 import NoticeArea from './NoticeArea'
+import KeyFlash from './KeyFlash'
 
 class App extends Component {
   componentWillMount() {
@@ -19,6 +20,10 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    this.refs.challengeInput.focus()
+  }
+
   allowedCharacter(key) {
     return _.includes([' ', '.', ',', '?', '(', ')', '!', '/'], key)
   }
@@ -31,15 +36,21 @@ class App extends Component {
     const korChar = letters[e.key]
     if(e.key == "Backspace") {
       this.setState({
-        enteredText: this.assembleHangul(this.state.enteredText.slice(0, -1))
+        enteredText: this.assembleHangul(this.state.enteredText.slice(0, -1)),
+        lastPressedKey: e.key,
+        lastPressedKorChar: korChar
       })
     } else if (this.allowedCharacter(e.key)) {
       this.setState({
-        enteredText: this.assembleHangul(this.state.enteredText += e.key)
+        enteredText: this.assembleHangul(this.state.enteredText += e.key),
+        lastPressedKey: e.key,
+        lastPressedKorChar: korChar
       })
     } else if (korChar) {
       this.setState({
-        enteredText: this.assembleHangul(this.state.enteredText += korChar)
+        enteredText: this.assembleHangul(this.state.enteredText += korChar),
+        lastPressedKey: e.key,
+        lastPressedKorChar: korChar
       })
     } else {
       // do nothing
@@ -87,6 +98,10 @@ class App extends Component {
         />
         <h1>{ this.state.enteredText }</h1>
         <input type="text" onKeyDown={this.handleKeyPress.bind(this)} ref="challengeInput"/>
+        <KeyFlash
+          lastPressedKey={this.state.lastPressedKey}
+          lastPressedKorChar={this.state.lastPressedKorChar}
+        />
       </div>
     )
   }

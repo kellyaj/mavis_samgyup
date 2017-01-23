@@ -2,7 +2,7 @@
   "name": "korean_keyboard",
   "version": "0.0.1",
   "devDependencies": {
-    "webpack-dev-server": "1.16.2"
+    "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "babel-loader": "6.2.7",
