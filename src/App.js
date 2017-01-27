@@ -32,14 +32,24 @@ class App extends Component {
     return Hangul.assemble(charCollection)
   }
 
+  bumpKeepTrying() {
+    // do some cool thing to bump the keep trying message
+    // or otherwise indicate it isnt done yet
+  }
+
   handleKeyPress(e) {
     const korChar = letters[e.key]
+    console.log(this.state.noRemainingChallenges)
     if(e.key == "Backspace") {
       this.setState({
         enteredText: this.assembleHangul(this.state.enteredText.slice(0, -1)),
         lastPressedKey: e.key,
         lastPressedKorChar: korChar
       })
+    } else if (e.key == "Enter") {
+      if(!this.state.noRemainingChallenges) {
+        this.state.correctEntry ? this.nextChallenge() : this.bumpKeepTrying()
+      }
     } else if (this.allowedCharacter(e.key)) {
       this.setState({
         enteredText: this.assembleHangul(this.state.enteredText += e.key),
@@ -68,6 +78,7 @@ class App extends Component {
       noRemainingChallenges: noChallenges,
       correctEntry: false
     })
+    this.refs.challengeInput.focus()
   }
 
   startOver() {
