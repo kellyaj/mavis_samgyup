@@ -10,7 +10,8 @@ class ChallengeSuccess extends Component {
     return (
       <div className="next-challenge-container">
         Correct!
-        <div className="" onClick={this.props.nextChallengeHandler}>-> next challenge</div>
+        Press [Enter] to go to the next challenge!
+        <div className="" onClick={this.props.nextChallengeHandler}>-></div>
       </div>
     )
   }
