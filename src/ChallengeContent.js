@@ -1,20 +1,28 @@
 import React, { Component } from 'react'
 import ChallengeSuccess from './ChallengeSuccess'
+import ChallengeInProgress from './ChallengeInProgress'
 
 class ChallengeContent extends Component {
 
   determineFeedback() {
     if(this.props.enteredText === this.props.challengeContent) {
       return (
-        <ChallengeSuccess
-          nextChallengeHandler={this.props.nextChallengeHandler}
-          startOverHandler={this.props.startOverHandler}
-          noRemainingChallenges={this.props.noRemainingChallenges}
-          correctEntryHandler={this.props.correctEntryHandler}
-        />
+        <div className="feedback-container">
+          <ChallengeSuccess
+            nextChallengeHandler={this.props.nextChallengeHandler}
+            startOverHandler={this.props.startOverHandler}
+            noRemainingChallenges={this.props.noRemainingChallenges}
+            correctEntryHandler={this.props.correctEntryHandler}
+          />
+        </div>
       )
     } else {
-      return  ""
+      return (
+        <div className="feedback-container">
+          <ChallengeInProgress
+          />
+        </div>
+      )
     }
   }
 
