@@ -7,11 +7,11 @@ class KeyboardLayout extends Component {
       return (
         <div className="display-keyboard-container">
           <div className="keyboard-container" onClick={this.props.hideKeyboardHandler}>
+            Hide Keyboard
             <div className="keyboard-image-container">
               <img src="https://s3.amazonaws.com/akells/KB_South_Korea.svg" />
             </div>
             <div className="image-credit">image by Yes0song (Own work) CC BY-SA 3.0</div>
-            Hide Keyboard
           </div>
         </div>
       )

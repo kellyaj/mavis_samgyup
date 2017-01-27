@@ -89,6 +89,7 @@ input:focus {
 }
 
 .keyboard-image-container {
+  margin-top: 1rem;
   min-height: 5rem;
   img {
     width: 35%;
@@ -97,5 +98,4 @@ input:focus {
 
 .image-credit {
   font-size: 0.4rem;
-  margin-bottom: 1rem;
 }
