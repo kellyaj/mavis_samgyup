@@ -39,7 +39,6 @@ class App extends Component {
 
   handleKeyPress(e) {
     const korChar = letters[e.key]
-    console.log(this.state.noRemainingChallenges)
     if(e.key == "Backspace") {
       this.setState({
         enteredText: this.assembleHangul(this.state.enteredText.slice(0, -1)),

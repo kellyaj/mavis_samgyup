@@ -19,6 +19,7 @@
 }
 
 .challenge-input-container {
+  @include span-columns(12);
   margin-top: 2rem;
   text-align: center;
   input {
@@ -51,8 +52,10 @@ input:focus {
 }
 
 .keyflash-container {
+  @include span-columns(12);
+  margin-top: 2rem;
+  min-height: 3rem;
   text-align: center;
-  margin-top: 3rem;
 }
 
 .feedback-container {
