@@ -126,7 +126,7 @@ class App extends Component {
         />
         <div className="entered-text-container">{ this.state.enteredText }</div>
         <div className="challenge-input-container">
-          <input type="text" onKeyDown={this.handleKeyPress.bind(this)} ref="challengeInput"/>
+          <input type="text" onKeyDown={this.handleKeyPress.bind(this)} ref="challengeInput" autocomplete="off"/>
         </div>
         <KeyFlash
           lastPressedKey={this.state.lastPressedKey}
