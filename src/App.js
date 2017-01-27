@@ -6,6 +6,7 @@ import ChallengeContent from './ChallengeContent'
 import ChallengeOptions from './ChallengeOptions'
 import NoticeArea from './NoticeArea'
 import KeyFlash from './KeyFlash'
+import KeyboardLayout from './KeyboardLayout'
 
 class App extends Component {
   componentWillMount() {
@@ -16,6 +17,7 @@ class App extends Component {
         enteredText: "",
         currentChallengeContent: this.props.challenges[0],
         noticeMessage: "",
+        showKeyboard: false
       })
     }
   }
@@ -96,6 +98,14 @@ class App extends Component {
     this.setState({ correctEntry: true })
   }
 
+  showKeyboard() {
+    this.setState({ showKeyboard: true })
+  }
+
+  hideKeyboard() {
+    this.setState({ showKeyboard: false })
+  }
+
   render() {
     return (
       <div className="app-container">
@@ -121,6 +131,11 @@ class App extends Component {
         <KeyFlash
           lastPressedKey={this.state.lastPressedKey}
           lastPressedKorChar={this.state.lastPressedKorChar}
+        />
+        <KeyboardLayout
+          showKeyboard={this.state.showKeyboard}
+          showKeyboardHandler={this.showKeyboard.bind(this)}
+          hideKeyboardHandler={this.hideKeyboard.bind(this)}
         />
       </div>
     )

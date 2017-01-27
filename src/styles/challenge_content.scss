@@ -81,3 +81,21 @@ input:focus {
 
 .challenge-in-progress {
 }
+
+.display-keyboard-container {
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+}
+
+.keyboard-image-container {
+  min-height: 5rem;
+  img {
+    width: 35%;
+  }
+}
+
+.image-credit {
+  font-size: 0.4rem;
+  margin-bottom: 1rem;
+}
