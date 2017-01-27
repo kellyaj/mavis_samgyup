@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 
 class ChallengeSuccess extends Component {
 
+  componentDidMount() {
+    this.props.correctEntryHandler()
+  }
+
   nextChallengeContent() {
     return (
       <div className="next-challenge-container">

@@ -65,7 +65,8 @@ class App extends Component {
       currentChallengeIndex: newChallengeIndex,
       currentChallengeContent: this.props.challenges[newChallengeIndex],
       enteredText: "",
-      noRemainingChallenges: noChallenges
+      noRemainingChallenges: noChallenges,
+      correctEntry: false
     })
   }
 
@@ -76,8 +77,13 @@ class App extends Component {
       currentChallengeIndex: "",
       enteredText: "",
       currentChallengeContent: this.props.challenges[0],
-      noRemainingChallanges: false
+      noRemainingChallanges: false,
+      correctEntry: false
     })
+  }
+
+  correctEntry() {
+    this.setState({ correctEntry: true })
   }
 
   render() {
@@ -95,10 +101,10 @@ class App extends Component {
           noRemainingChallenges={this.state.noRemainingChallenges}
           nextChallengeHandler={this.nextChallenge.bind(this)}
           startOverHandler={this.startOver.bind(this)}
+          correctEntryHandler={this.correctEntry.bind(this)}
+          correctEntry={this.state.correctEntry}
         />
-        <div className="entered-text-container">
-          { this.state.enteredText }
-        </div>
+        <div className="entered-text-container">{ this.state.enteredText }</div>
         <div className="challenge-input-container">
           <input type="text" onKeyDown={this.handleKeyPress.bind(this)} ref="challengeInput"/>
         </div>

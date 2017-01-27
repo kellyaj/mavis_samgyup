@@ -27,6 +27,7 @@ input:focus {
 }
 
 .challenge-content-feedback {
+  min-height: 6rem;
 }
 
 .challenge-options-container {
@@ -34,12 +35,15 @@ input:focus {
 }
 
 .challenge-success-container {
+  text-align: center;
 }
 
 .next-challenge-container {
+  text-align: center;
 }
 
 .no-challenges-container {
+  text-align: center;
 }
 
 .keyflash-container {
@@ -52,4 +56,12 @@ input:focus {
   font-size: 1.3rem;
   font-weight: 500;
   margin: 0 1rem;
+}
+
+.entry-success {
+  background-color: lime;
+}
+
+.entry-not-success {
+  background-color: red;
 }
