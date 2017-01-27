@@ -5,7 +5,9 @@ class ChallengeOptions extends Component {
     return (
       <div className="challenge-options-container">
         <ul>
-          <li onClick={this.props.startOverHandler}>Restart</li>
+          <li className="challenge-options-item" onClick={this.props.startOverHandler}>Restart</li>
+          <li className="challenge-options-item" onClick={() => {}}>Select New Challenge</li>
+          <li className="challenge-options-item" onClick={() => {}}>Help</li>
         </ul>
       </div>
     )

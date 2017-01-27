@@ -96,8 +96,12 @@ class App extends Component {
           nextChallengeHandler={this.nextChallenge.bind(this)}
           startOverHandler={this.startOver.bind(this)}
         />
-        <h1>{ this.state.enteredText }</h1>
-        <input type="text" onKeyDown={this.handleKeyPress.bind(this)} ref="challengeInput"/>
+        <div className="entered-text-container">
+          { this.state.enteredText }
+        </div>
+        <div className="challenge-input-container">
+          <input type="text" onKeyDown={this.handleKeyPress.bind(this)} ref="challengeInput"/>
+        </div>
         <KeyFlash
           lastPressedKey={this.state.lastPressedKey}
           lastPressedKorChar={this.state.lastPressedKorChar}

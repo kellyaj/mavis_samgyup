@@ -3,6 +3,13 @@
 @import 'neat';
 
 @import 'challenge_content';
+@import 'notice_area';
 
 body {
+}
+
+.app-container {
+  @include span-columns(12);
+  border: 1px solid #000;
+  padding: 2rem 0;
 }

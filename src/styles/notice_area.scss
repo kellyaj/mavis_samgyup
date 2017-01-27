@@ -1,0 +1,7 @@
+.notice-area-container {
+  @include span-columns(12);
+  font-size: 1.3rem;
+  min-height: 4rem;
+  padding: 1rem;
+  text-align: center;
+}

@@ -1,2 +1,55 @@
 .challenge-content-container {
+  @include span-columns(12);
+}
+
+.challenge-content {
+  background-color: red;
+  font-size: 6rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.entered-text-container {
+  font-size: 3rem;
+  min-height: 3rem;
+  text-align: center;
+}
+
+.challenge-input-container {
+  text-align: center;
+  input {
+    border: 0;
+    border-bottom: 1px solid black;
+  }
+}
+input:focus {
+  outline: none;
+}
+
+.challenge-content-feedback {
+}
+
+.challenge-options-container {
+  user-select: none;
+}
+
+.challenge-success-container {
+}
+
+.next-challenge-container {
+}
+
+.no-challenges-container {
+}
+
+.keyflash-container {
+  text-align: center;
+}
+
+.challenge-options-item {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0 1rem;
 }
