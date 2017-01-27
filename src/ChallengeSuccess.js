@@ -9,7 +9,7 @@ class ChallengeSuccess extends Component {
   nextChallengeContent() {
     return (
       <div className="next-challenge-container">
-        <h2>Correct!</h2>
+        Correct!
         <div className="" onClick={this.props.nextChallengeHandler}>-> next challenge</div>
       </div>
     )
