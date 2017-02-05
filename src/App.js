@@ -20,12 +20,13 @@ class App extends Component {
         noticeMessage: "",
         showKeyboard: false,
         showChallengeSelection: true,
-        currentChallengeCategory: undefined
+        currentChallengeCategory: undefined,
+        canRestart: false,
       })
     }
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     if(!this.state.showChallengeSelection) {
       this.refs.challengeInput.focus()
     }
@@ -93,9 +94,10 @@ class App extends Component {
       noticeMessage: "Restarting with the first challenge",
       currentChallengeIndex: "",
       enteredText: "",
-      currentChallengeContent: this.props.challenges[0],
+      currentChallengeContent: this.state.currentChallengeCategory.challenges[0].content,
       noRemainingChallanges: false,
-      correctEntry: false
+      correctEntry: false,
+      canRestart: true,
     })
   }
 
@@ -112,14 +114,20 @@ class App extends Component {
   }
 
   selectNewChallenge() {
-    this.setState({ showChallengeSelection: true })
+    this.setState({
+      showChallengeSelection: true,
+      currentChallengeCategory: undefined,
+      currentChallengeContent: undefined,
+      canRestart: false,
+    })
   }
 
   makeChallengeSelection(challengeCategory) {
     this.setState({
       showChallengeSelection: false,
       currentChallengeCategory: challengeCategory,
-      currentChallengeContent: challengeCategory.challenges[0].content
+      currentChallengeContent: challengeCategory.challenges[0].content,
+      canRestart: true,
     })
   }
 
@@ -172,6 +180,7 @@ class App extends Component {
         <ChallengeOptions
           startOverHandler={this.startOver.bind(this)}
           selectNewChallengeHandler={this.selectNewChallenge.bind(this)}
+          canRestart={this.state.canRestart}
         />
         { this.displayMainContent() }
       </div>
