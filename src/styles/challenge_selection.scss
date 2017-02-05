@@ -5,6 +5,7 @@
 .challenge-card-container {
   @include span-columns(3)
   cursor: pointer;
+  font-family: 'Overpass',sans-serif;
   margin: 1rem;
   padding: 2rem 2rem;
   text-align: center;
@@ -12,7 +13,7 @@
 }
 
 .challenge-card-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   border-bottom: 1px solid #fff;
 }
 

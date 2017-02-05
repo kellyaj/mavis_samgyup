@@ -1,5 +1,7 @@
 .notice-area-container {
   @include span-columns(12);
+  color: #fff;
+  font-family: 'Overpass',sans-serif;
   font-size: 1.3rem;
   min-height: 4rem;
   padding: 1rem;

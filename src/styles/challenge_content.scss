@@ -1,9 +1,9 @@
 .challenge-content-container {
   @include span-columns(12);
+  font-family: 'Overpass',sans-serif;
 }
 
 .challenge-content {
-  background-color: red;
   font-size: 6rem;
   margin-top: 1rem;
   min-height: 6rem;
@@ -12,7 +12,7 @@
 
 .entered-text-container {
   @include span-columns(12);
-  background-color: #FFCA1D;
+  background-color: $medpurp;
   font-size: 4rem;
   min-height: 6rem;
   margin: 1rem 0;
@@ -24,6 +24,7 @@
   margin-top: 2rem;
   text-align: center;
   input {
+    background-color: $lightblue;
     border: 0;
     border-bottom: 1px solid black;
     font-size: 4rem;
@@ -35,16 +36,22 @@ input:focus {
 }
 
 .challenge-content-feedback {
-  min-height: 6rem;
+  min-height: 3rem;
 }
 
 .challenge-options-container {
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  text-shadow: 1px 1px $lightblue;
   user-select: none;
+  li {
+    font-size: 2rem;
+  }
 }
 
 .challenge-success-container {
   @include span-columns(12);
-  background-color: #FFE41D;
+  background-color: $lightblue;
   text-align: center;
   padding: 1rem 0;
 }
@@ -68,6 +75,7 @@ input:focus {
 }
 
 .feedback-container {
+  margin-top: 1rem;
   text-align: center;
   font-size: 1.5rem;
 }
@@ -85,14 +93,16 @@ input:focus {
 }
 
 .entry-not-success {
-  background-color: #FF5034;
+  background-color: $lightpurp;
 }
 
 .challenge-in-progress {
+  color: #fff;
 }
 
 .display-keyboard-container {
   @include span-columns(12);
+  color: #fff;
   cursor: pointer;
   text-align: center;
   user-select: none;

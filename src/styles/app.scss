@@ -7,10 +7,11 @@
 @import 'challenge_selection';
 
 body {
+  background-color: $darkpurp;
 }
 
 .app-container {
   @include span-columns(12);
-  border: 1px solid #000;
+  background-color: $darkpurp;
   padding: 2rem 0;
 }
