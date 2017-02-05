@@ -13,7 +13,7 @@
 .entered-text-container {
   @include span-columns(12);
   min-height: 6rem;
-  background-color: yellow;
+  background-color: #FFCA1D;
   font-size: 4rem;
   text-align: center;
 }
@@ -76,7 +76,7 @@ input:focus {
 }
 
 .entry-not-success {
-  background-color: red;
+  background-color: #FF5034;
 }
 
 .challenge-in-progress {

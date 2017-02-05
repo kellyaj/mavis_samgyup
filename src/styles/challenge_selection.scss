@@ -1,0 +1,33 @@
+.challenge-selection-container {
+  text-align: center;
+}
+
+.challenge-card-container {
+  @include span-columns(3)
+  cursor: pointer;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+  user-select: none;
+}
+
+.challenge-card-title {
+  font-size: 1.8rem;
+  border-bottom: 1px solid #fff;
+}
+
+.challenge-card-icon {
+  margin-top: 0.6rem;
+  font-size: 4rem;
+}
+
+.difficulty-EASY {
+  background-color: #7FD02D;
+}
+
+.difficulty-MEDIUM {
+  background-color: #C8E031;
+}
+.difficulty-HARD {
+  background-color: #E65532;
+}
