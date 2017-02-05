@@ -12,9 +12,10 @@
 
 .entered-text-container {
   @include span-columns(12);
-  min-height: 6rem;
   background-color: #FFCA1D;
   font-size: 4rem;
+  min-height: 6rem;
+  margin: 1rem 0;
   text-align: center;
 }
 
@@ -40,11 +41,17 @@ input:focus {
 }
 
 .challenge-success-container {
+  @include span-columns(12);
+  background-color: #FFE41D;
   text-align: center;
+  padding: 1rem 0;
 }
 
 .next-challenge-container {
   text-align: center;
+  i {
+    margin-left: 0.5rem;
+  }
 }
 
 .no-challenges-container {
@@ -83,6 +90,7 @@ input:focus {
 }
 
 .display-keyboard-container {
+  @include span-columns(12);
   cursor: pointer;
   text-align: center;
   user-select: none;

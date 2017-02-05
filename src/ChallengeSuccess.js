@@ -8,10 +8,10 @@ class ChallengeSuccess extends Component {
 
   nextChallengeContent() {
     return (
-      <div className="next-challenge-container">
+      <div className="next-challenge-container" onClick={this.props.nextChallengeHandler}>
         Correct!
         Press [Enter] to go to the next challenge!
-        <div className="" onClick={this.props.nextChallengeHandler}>-></div>
+        <i className="fa fa-arrow-right"></i>
       </div>
     )
   }
