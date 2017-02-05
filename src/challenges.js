@@ -44,7 +44,7 @@ module.exports = {
   },
   "TRAVEL": {
     categoryName: "Travel",
-    difficulty: EASY_DIFFICULTY,
+    difficulty: MEDIUM_DIFFICULTY,
     iconClass: "suitcase",
     challenges: [
       {
@@ -69,24 +69,128 @@ module.exports = {
     categoryName: "Countries",
     difficulty: EASY_DIFFICULTY,
     iconClass: "globe",
-    challenges: []
+    challenges: [
+      {
+        content: "",
+        english: ""
+      },
+      {
+        content: "",
+        english: ""
+      },
+      {
+        content: "",
+        english: ""
+      },
+      {
+        content: "",
+        english: ""
+      },
+      {
+        content: "",
+        english: ""
+      },
+    ]
   },
   "BODY": {
     categoryName: "Body Parts",
     difficulty: MEDIUM_DIFFICULTY,
     iconClass: "male",
-    challenges: []
+    challenges: [
+      {
+        content: "",
+        english: "eyes"
+      },
+      {
+        content: "",
+        english: "eyebrows"
+      },
+      {
+        content: "",
+        english: "head"
+      },
+      {
+        content: "",
+        english: "nose"
+      },
+      {
+        content: "",
+        english: "cheeks"
+      },
+      {
+        content: "",
+        english: "lips"
+      },
+      {
+        content: "",
+        english: "ears"
+      },
+      {
+        content: "",
+        english: "chin"
+      },
+      {
+        content: "",
+        english: "neck"
+      },
+    ]
   },
   "PLACES": {
     categoryName: "Places",
     difficulty: HARD_DIFFICULTY,
     iconClass: "map-marker",
-    challenges: []
+    challenges: [
+      {
+        content: "",
+        english: "bank"
+      },
+      {
+        content: "",
+        english: "convenience store"
+      },
+      {
+        content: "",
+        english: "hospital"
+      },
+      {
+        content: "",
+        english: "department store"
+      },
+      {
+        content: "",
+        english: "embassy"
+      },
+    ]
   },
   "COMPUTERS": {
     categoryName: "Computers",
     difficulty: HARD_DIFFICULTY,
     iconClass: "desktop",
-    challenges: []
+    challenges: [
+      {
+        content: "",
+        english: "computer"
+      },
+      {
+        content: "",
+        english: "login"
+      },
+      {
+        content: "",
+        english: "password"
+      },
+      {
+        content: "",
+        english: "email"
+      },
+      {
+        content: "",
+        english: "account"
+      },
+      {
+        content: "",
+        english: "leet hacker"
+      },
+    ]
   }
 }
