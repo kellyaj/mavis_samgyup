@@ -80,6 +80,10 @@ class App extends Component {
     this.refs.challengeInput.value = ""
     const newChallengeIndex = this.state.currentChallengeIndex += 1
     const noChallenges = newChallengeIndex === (this.state.currentChallengeCategory.challenges.length - 1)
+    console.log(newChallengeIndex)
+    console.log(this.state.currentChallengeIndex)
+    console.log(this.state.currentChallengeCategory.challenges.length)
+    console.log("------")
     this.setState({
       currentChallengeIndex: newChallengeIndex,
       currentChallengeContent: this.state.currentChallengeCategory.challenges[newChallengeIndex].content,
@@ -95,7 +99,7 @@ class App extends Component {
     this.refs.challengeInput.value = ""
     this.setState({
       noticeMessage: "Restarting with the first challenge",
-      currentChallengeIndex: "",
+      currentChallengeIndex: 0,
       enteredText: "",
       currentChallengeContent: this.state.currentChallengeCategory.challenges[0].content,
       currentChallengeTranslation: this.state.currentChallengeCategory.challenges[0].english,
@@ -123,6 +127,7 @@ class App extends Component {
       currentChallengeCategory: undefined,
       currentChallengeContent: undefined,
       currentChallengeTranslation: undefined,
+      currentChallengeIndex: 0,
       canRestart: false,
     })
   }
@@ -135,6 +140,11 @@ class App extends Component {
       currentChallengeTranslation: challengeCategory.challenges[0].english,
       canRestart: true,
     })
+  }
+
+  toggleTranslations() {
+    const currentTranslationState = this.state.showTranslation
+    this.setState({ showTranslation: !currentTranslationState})
   }
 
   displayMainContent() {
@@ -188,6 +198,7 @@ class App extends Component {
         <ChallengeOptions
           startOverHandler={this.startOver.bind(this)}
           selectNewChallengeHandler={this.selectNewChallenge.bind(this)}
+          toggleTranslationsHandler={this.toggleTranslations.bind(this)}
           canRestart={this.state.canRestart}
         />
         { this.displayMainContent() }
