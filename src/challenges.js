@@ -203,7 +203,7 @@ module.exports = {
   },
   "COUNTRIES": {
     categoryName: "Countries",
-    difficulty: EASY_DIFFICULTY,
+    difficulty: MEDIUM_DIFFICULTY,
     iconClass: "globe",
     challenges: [
       {
