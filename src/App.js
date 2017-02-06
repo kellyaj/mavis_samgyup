@@ -163,6 +163,7 @@ class App extends Component {
           <ChallengeContent
             challengeContent={this.state.currentChallengeContent}
             challengeTranslation={this.state.currentChallengeTranslation}
+            challengeCategoryName={this.state.currentChallengeCategory.categoryName}
             showTranslation={this.state.showTranslation}
             enteredText={this.state.enteredText}
             noRemainingChallenges={this.state.noRemainingChallenges}

@@ -63,11 +63,13 @@ input:focus {
 .challenge-success-container {
   @include span-columns(12);
   background-color: $lightblue;
+  border: solid 1px $darkpurp;
   text-align: center;
   padding: 1rem 0;
 }
 
 .next-challenge-container {
+  @include span-columns(12);
   text-align: center;
   i {
     margin-left: 0.5rem;
@@ -137,4 +139,14 @@ input:focus {
 .key-note-container {
   margin: 1rem 0;
   font-size: 0.9rem;
+}
+
+.challenge-category-name {
+  @include span-columns(12);
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-family: 'Overpass',sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+  text-shadow: 1px 1px $lightblue;
 }

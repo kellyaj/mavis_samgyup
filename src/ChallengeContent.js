@@ -48,11 +48,13 @@ class ChallengeContent extends Component {
   render() {
     const {
       challengeContent,
-      challengeTranslation
+      challengeTranslation,
+      challengeCategoryName
     } = this.props
     const statusClass = this.determineStatusClass()
     return (
       <div className="challenge-content-container">
+        <div className="challenge-category-name">{challengeCategoryName}</div>
         <div className="challenge-content-feedback">{ this.determineFeedback() }</div>
         <div className={`challenge-content ${statusClass}`}>
           <div className="">
