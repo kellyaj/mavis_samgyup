@@ -322,10 +322,6 @@ module.exports = {
         english: "nose"
       },
       {
-        content: "",
-        english: "cheeks"
-      },
-      {
         content: "입술",
         english: "lips"
       },
