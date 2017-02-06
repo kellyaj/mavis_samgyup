@@ -501,87 +501,15 @@ module.exports = {
       },
     ]
   },
-  "VERBS": {
-    categoryName: "Verbs",
-    difficulty: MEDIUM_DIFFICULTY,
-    iconClass: "book",
-    challenges: [
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-      {
-        content: "",
-        english: ""
-      },
-    ]
-  }
+  //  "VERBS": {
+  //    categoryName: "Verbs",
+  //    difficulty: MEDIUM_DIFFICULTY,
+  //    iconClass: "book",
+  //    challenges: [
+  //      {
+  //        content: "",
+  //        english: ""
+  //      },
+  //    ]
+  //  }
 }
