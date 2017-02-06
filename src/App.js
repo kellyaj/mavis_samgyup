@@ -195,7 +195,7 @@ class App extends Component {
       <div className="app-container">
         <div className="app-title-container">
           <div className="app-main-title">
-            Mavis Samgyeop <span className="app-sub-title">at korkb.com</span>
+            Mavis Samgyeop <span className="app-sub-title">&nbsp;at&nbsp;&nbsp;korkb.com</span>
           </div>
         </div>
         <ChallengeOptions

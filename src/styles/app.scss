@@ -18,6 +18,7 @@ body {
 
 .app-title-container {
   @include span-columns(12);
+  margin-left: 1rem;
 }
 
 .app-main-title {
