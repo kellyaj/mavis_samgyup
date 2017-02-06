@@ -34,13 +34,32 @@ class ChallengeContent extends Component {
     }
   }
 
+  displayTranslation() {
+    const { challengeTranslation } = this.props
+    if(this.props.showTranslation) {
+      return (
+        <div className={`challenge-translation`}>
+          ( { challengeTranslation } )
+        </div>
+      )
+    }
+  }
+
   render() {
-    const { challengeContent } = this.props
+    const {
+      challengeContent,
+      challengeTranslation
+    } = this.props
     const statusClass = this.determineStatusClass()
     return (
       <div className="challenge-content-container">
         <div className="challenge-content-feedback">{ this.determineFeedback() }</div>
-        <div className={`challenge-content ${statusClass}`}>{ challengeContent }</div>
+        <div className={`challenge-content ${statusClass}`}>
+          <div className="">
+            { challengeContent }
+          </div>
+          { this.displayTranslation() }
+        </div>
       </div>
     )
   }

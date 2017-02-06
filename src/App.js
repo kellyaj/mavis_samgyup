@@ -16,12 +16,14 @@ class App extends Component {
         currentChallengeIndex: 0,
         noRemainingChallenges: false,
         enteredText: "",
-        currentChallengeContent: this.props.challenges[0],
+        currentChallengeContent: undefined,
+        currentChallengeTranslation: undefined,
         noticeMessage: "",
         showKeyboard: false,
         showChallengeSelection: true,
         currentChallengeCategory: undefined,
         canRestart: false,
+        showTranslation: true,
       })
     }
   }
@@ -81,6 +83,7 @@ class App extends Component {
     this.setState({
       currentChallengeIndex: newChallengeIndex,
       currentChallengeContent: this.state.currentChallengeCategory.challenges[newChallengeIndex].content,
+      currentChallengeTranslation: this.state.currentChallengeCategory.challenges[newChallengeIndex].english,
       enteredText: "",
       noRemainingChallenges: noChallenges,
       correctEntry: false
@@ -95,6 +98,7 @@ class App extends Component {
       currentChallengeIndex: "",
       enteredText: "",
       currentChallengeContent: this.state.currentChallengeCategory.challenges[0].content,
+      currentChallengeTranslation: this.state.currentChallengeCategory.challenges[0].english,
       noRemainingChallanges: false,
       correctEntry: false,
       canRestart: true,
@@ -118,6 +122,7 @@ class App extends Component {
       showChallengeSelection: true,
       currentChallengeCategory: undefined,
       currentChallengeContent: undefined,
+      currentChallengeTranslation: undefined,
       canRestart: false,
     })
   }
@@ -127,6 +132,7 @@ class App extends Component {
       showChallengeSelection: false,
       currentChallengeCategory: challengeCategory,
       currentChallengeContent: challengeCategory.challenges[0].content,
+      currentChallengeTranslation: challengeCategory.challenges[0].english,
       canRestart: true,
     })
   }
@@ -146,6 +152,8 @@ class App extends Component {
         <div>
           <ChallengeContent
             challengeContent={this.state.currentChallengeContent}
+            challengeTranslation={this.state.currentChallengeTranslation}
+            showTranslation={this.state.showTranslation}
             enteredText={this.state.enteredText}
             noRemainingChallenges={this.state.noRemainingChallenges}
             nextChallengeHandler={this.nextChallenge.bind(this)}

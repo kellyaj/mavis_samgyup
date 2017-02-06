@@ -4,14 +4,24 @@
 }
 
 .challenge-content {
+  color: #fff;
+  text-shadow: 2px 2px $lightblue;
   font-size: 6rem;
   margin-top: 1rem;
   min-height: 6rem;
   text-align: center;
 }
 
+.challenge-translation {
+  font-family: 'Exo', sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
 .entered-text-container {
   @include span-columns(12);
+  color: #fff;
   font-family: 'Exo', sans-serif;
   background-color: $medpurp;
   font-size: 4rem;
@@ -93,7 +103,7 @@ input:focus {
 }
 
 .entry-success {
-  background-color: lime;
+  background-color: #97EB56;
 }
 
 .entry-not-success {
