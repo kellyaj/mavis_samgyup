@@ -4,12 +4,13 @@
 }
 
 .challenge-content {
+  border: 1px solid #000;
   color: #fff;
-  text-shadow: 2px 2px $lightblue;
   font-size: 6rem;
   margin-top: 1rem;
   min-height: 6rem;
   text-align: center;
+  text-shadow: 2px 1px #000;
 }
 
 .challenge-translation {
@@ -21,6 +22,7 @@
 
 .entered-text-container {
   @include span-columns(12);
+  border: 1px solid #000;
   color: #fff;
   font-family: 'Exo', sans-serif;
   background-color: $medpurp;
@@ -28,6 +30,7 @@
   min-height: 6rem;
   margin: 1rem 0;
   text-align: center;
+  text-shadow: 2px 1px #000;
 }
 
 .challenge-input-container {
@@ -53,7 +56,7 @@ input:focus {
 .challenge-options-container {
   color: #fff;
   font-family: 'Exo', sans-serif;
-  text-shadow: 1px 1px $lightblue;
+  text-shadow: 1px 1px #000;
   user-select: none;
   li {
     font-size: 2rem;
@@ -86,7 +89,7 @@ input:focus {
   font-family: 'Exo', sans-serif;
   font-size: 1.3rem;
   margin-top: 2rem;
-  min-height: 3rem;
+  min-height: 5rem;
   text-align: center;
 }
 

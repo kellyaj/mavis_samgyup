@@ -4,6 +4,7 @@
 
 .challenge-card-container {
   @include span-columns(3)
+  border: 1px solid #000;
   cursor: pointer;
   font-family: 'Overpass',sans-serif;
   margin: 1rem;
