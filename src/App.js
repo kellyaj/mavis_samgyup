@@ -193,14 +193,19 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <NoticeArea
-          message={this.state.noticeMessage}
-        />
+        <div className="app-title-container">
+          <div className="app-main-title">
+            Mavis Samgyeop <span className="app-sub-title">at korkb.com</span>
+          </div>
+        </div>
         <ChallengeOptions
           startOverHandler={this.startOver.bind(this)}
           selectNewChallengeHandler={this.selectNewChallenge.bind(this)}
           toggleTranslationsHandler={this.toggleTranslations.bind(this)}
           canRestart={this.state.canRestart}
+        />
+        <NoticeArea
+          message={this.state.noticeMessage}
         />
         { this.displayMainContent() }
       </div>

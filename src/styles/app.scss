@@ -15,3 +15,19 @@ body {
   background-color: $darkpurp;
   padding: 2rem 0;
 }
+
+.app-title-container {
+  @include span-columns(12);
+}
+
+.app-main-title {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.app-sub-title {
+  font-family: 'Exo', sans-serif;
+  color: #fff;
+  font-size: 0.8rem;
+}
