@@ -80,10 +80,6 @@ class App extends Component {
     this.refs.challengeInput.value = ""
     const newChallengeIndex = this.state.currentChallengeIndex += 1
     const noChallenges = newChallengeIndex === (this.state.currentChallengeCategory.challenges.length - 1)
-    console.log(newChallengeIndex)
-    console.log(this.state.currentChallengeIndex)
-    console.log(this.state.currentChallengeCategory.challenges.length)
-    console.log("------")
     this.setState({
       currentChallengeIndex: newChallengeIndex,
       currentChallengeContent: this.state.currentChallengeCategory.challenges[newChallengeIndex].content,
@@ -195,7 +191,7 @@ class App extends Component {
       <div className="app-container">
         <div className="app-title-container">
           <div className="app-main-title">
-            Mavis Samgyeop <span className="app-sub-title">&nbsp;at&nbsp;&nbsp;korkb.com</span>
+            <span className="app-logo"><img src="mavisfinal.png"></img></span>Mavis Samgyeop <span className="app-sub-title">&nbsp;at&nbsp;&nbsp;korkb.com</span>
           </div>
         </div>
         <ChallengeOptions
