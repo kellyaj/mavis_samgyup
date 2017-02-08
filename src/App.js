@@ -8,6 +8,7 @@ import NoticeArea from './NoticeArea'
 import KeyFlash from './KeyFlash'
 import KeyboardLayout from './KeyboardLayout'
 import ChallengeSelection from './challenge_selection/ChallengeSelection'
+import AppTitle from './AppTitle'
 
 class App extends Component {
   componentWillMount() {
@@ -189,11 +190,9 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <div className="app-title-container">
-          <div className="app-main-title">
-            <span className="app-logo"><img src="mavisfinal.png"></img></span>Mavis Samgyeop <span className="app-sub-title">&nbsp;at&nbsp;&nbsp;korkb.com</span>
-          </div>
-        </div>
+        <AppTitle
+          inChallengeSelection={this.state.showChallengeSelection}
+        />
         <ChallengeOptions
           startOverHandler={this.startOver.bind(this)}
           selectNewChallengeHandler={this.selectNewChallenge.bind(this)}
