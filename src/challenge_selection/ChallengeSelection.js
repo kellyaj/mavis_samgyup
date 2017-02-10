@@ -27,6 +27,9 @@ class ChallengeSelection extends Component {
   render() {
     return (
       <div className="challenge-selection-container">
+        <div className="challenge-selection-title">
+          Start improving your Korean typing skills and vocabulary by selecting from one of these categories
+        </div>
         { this.buildChallengeList() }
       </div>
     )
