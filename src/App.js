@@ -170,18 +170,22 @@ class App extends Component {
             correctEntry={this.state.correctEntry}
           />
           <div className="entered-text-container">{ this.state.enteredText }</div>
+          <div className="input-side-menu">
+            <KeyboardLayout
+              showKeyboard={this.state.showKeyboard}
+              showKeyboardHandler={this.showKeyboard.bind(this)}
+              hideKeyboardHandler={this.hideKeyboard.bind(this)}
+            />
+          </div>
           <div className="challenge-input-container">
             <input type="text" onKeyDown={this.handleKeyPress.bind(this)} ref="challengeInput" autoComplete="off"/>
           </div>
-          <KeyFlash
-            lastPressedKey={this.state.lastPressedKey}
-            lastPressedKorChar={this.state.lastPressedKorChar}
-          />
-          <KeyboardLayout
-            showKeyboard={this.state.showKeyboard}
-            showKeyboardHandler={this.showKeyboard.bind(this)}
-            hideKeyboardHandler={this.hideKeyboard.bind(this)}
-          />
+          <div className="input-side-menu">
+            <KeyFlash
+              lastPressedKey={this.state.lastPressedKey}
+              lastPressedKorChar={this.state.lastPressedKorChar}
+            />
+          </div>
         </div>
       )
     }

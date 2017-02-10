@@ -34,7 +34,7 @@
 }
 
 .challenge-input-container {
-  @include span-columns(12);
+  @include span-columns(6);
   margin-top: 2rem;
   text-align: center;
   input {
@@ -47,6 +47,10 @@
 }
 input:focus {
   outline: none;
+}
+
+.input-side-menu {
+  @include span-columns(3)
 }
 
 .challenge-content-feedback {
@@ -131,7 +135,7 @@ input:focus {
   margin-top: 1rem;
   min-height: 5rem;
   img {
-    width: 35%;
+    width: 100%;
   }
 }
 
