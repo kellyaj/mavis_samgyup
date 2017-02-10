@@ -149,7 +149,7 @@ class App extends Component {
       return (
         <div className="point-right-tooltip">
           <span>
-            Start typing here! &nbsp;&nbsp;<i className="fa fa-long-arrow-right"></i>
+            Start typing here! &nbsp;&nbsp;<i className="fa fa-long-arrow-right"></i>&nbsp;
           </span>
         </div>
       )

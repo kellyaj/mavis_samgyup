@@ -168,6 +168,9 @@ input:focus {
   @include span-columns(6);
   @include shift(6);
   background-color: #F7ED80;
+  border-bottom: 1px solid #FFFBD0;
+  border-right: 1px solid #FFFBD0;
+  font-family: 'Acme', sans-serif;
   margin-top: 2rem;
   padding: 0.5rem 0;
   text-align: center;
