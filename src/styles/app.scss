@@ -17,7 +17,7 @@ body {
 }
 
 .app-title-container {
-  @include span-columns(12);
+  @include row();
   margin-left: 1rem;
   user-select: none;
 }

@@ -4,12 +4,12 @@
 }
 
 .challenge-selection-list {
-  @include span-columns(12)
+  @include span-columns(12);
   @include shift(1)
 }
 
 .challenge-card-container {
-  @include span-columns(3)
+  @include span-columns(3);
   border: 1px solid #000;
   cursor: pointer;
   font-family: 'Overpass',sans-serif;
@@ -20,7 +20,7 @@
 }
 
 .challenge-selection-title {
-  @include row()
+  @include row();
   color: #fff;
   font-family: 'Overpass',sans-serif;
   font-size: 1.5rem;
