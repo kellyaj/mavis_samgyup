@@ -19,7 +19,7 @@ class ChallengeSuccess extends Component {
   noRemainingChallengesContent() {
     return (
       <div className="no-challenges-container">
-        <div onClick={this.props.startOverHandler}>No challenges remain. Start over?</div>
+        <div onClick={this.props.startOverHandler}>No challenges remain. Click here to start this challenge over.</div>
       </div>
     )
   }

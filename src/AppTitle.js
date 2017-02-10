@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class AppTitle extends Component {
   render() {
     return (
-      <div className="app-title-container">
+      <div className="app-title-container" onClick={this.props.selectNewChallengeHandler}>
         <div className="app-main-title">
           <span className="app-logo">
             <img src="mavis_sep_mini9.png"></img>

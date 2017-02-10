@@ -501,15 +501,19 @@ module.exports = {
       },
     ]
   },
-  //  "VERBS": {
-  //    categoryName: "Verbs",
-  //    difficulty: MEDIUM_DIFFICULTY,
-  //    iconClass: "book",
-  //    challenges: [
-  //      {
-  //        content: "",
-  //        english: ""
-  //      },
-  //    ]
-  //  }
+  "DEBUG": {
+    categoryName: "Debug",
+    difficulty: MEDIUM_DIFFICULTY,
+    iconClass: "bug",
+    challenges: [
+      {
+        content: "바",
+        english: "ba"
+      },
+      {
+        content: "바",
+        english: "ba"
+      },
+    ]
+  }
 }

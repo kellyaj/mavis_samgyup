@@ -100,7 +100,7 @@ class App extends Component {
       enteredText: "",
       currentChallengeContent: this.state.currentChallengeCategory.challenges[0].content,
       currentChallengeTranslation: this.state.currentChallengeCategory.challenges[0].english,
-      noRemainingChallanges: false,
+      noRemainingChallenges: false,
       correctEntry: false,
       canRestart: true,
     })
@@ -125,6 +125,10 @@ class App extends Component {
       currentChallengeContent: undefined,
       currentChallengeTranslation: undefined,
       currentChallengeIndex: 0,
+      noticeMessage: "",
+      enteredText: "",
+      noRemainingChallenges: false,
+      correctEntry: false,
       canRestart: false,
     })
   }
@@ -135,6 +139,11 @@ class App extends Component {
       currentChallengeCategory: challengeCategory,
       currentChallengeContent: challengeCategory.challenges[0].content,
       currentChallengeTranslation: challengeCategory.challenges[0].english,
+      currentChallengeIndex: 0,
+      noticeMessage: "",
+      enteredText: "",
+      noRemainingChallenges: false,
+      correctEntry: false,
       canRestart: true,
     })
   }
@@ -213,6 +222,7 @@ class App extends Component {
       <div className="app-container">
         <AppTitle
           inChallengeSelection={this.state.showChallengeSelection}
+          selectNewChallengeHandler={this.selectNewChallenge.bind(this)}
         />
         <ChallengeOptions
           startOverHandler={this.startOver.bind(this)}
