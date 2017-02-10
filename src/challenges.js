@@ -4,7 +4,7 @@ const HARD_DIFFICULTY   = "HARD"
 
 module.exports = {
   "FOOD": {
-    categoryName: "Food and Dining",
+    categoryName: "Food",
     difficulty: EASY_DIFFICULTY,
     iconClass: "cutlery",
     description: "",

@@ -1,5 +1,11 @@
 .challenge-selection-container {
+  @include outer-container;
   text-align: center;
+}
+
+.challenge-selection-list {
+  @include span-columns(12)
+  @include shift(1)
 }
 
 .challenge-card-container {
@@ -14,6 +20,7 @@
 }
 
 .challenge-selection-title {
+  @include row()
   color: #fff;
   font-family: 'Overpass',sans-serif;
   font-size: 1.5rem;
