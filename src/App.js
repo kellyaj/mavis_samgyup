@@ -144,6 +144,18 @@ class App extends Component {
     this.setState({ showTranslation: !currentTranslationState})
   }
 
+  displayTypingTip() {
+    if(!this.state.showKeyboard) {
+      return (
+        <div className="point-right-tooltip">
+          <span>
+            Start typing here! &nbsp;&nbsp;<i className="fa fa-long-arrow-right"></i>
+          </span>
+        </div>
+      )
+    }
+  }
+
   displayMainContent() {
     if(this.state.showChallengeSelection) {
       return (
@@ -170,21 +182,26 @@ class App extends Component {
             correctEntry={this.state.correctEntry}
           />
           <div className="entered-text-container">{ this.state.enteredText }</div>
-          <div className="input-side-menu">
-            <KeyboardLayout
-              showKeyboard={this.state.showKeyboard}
-              showKeyboardHandler={this.showKeyboard.bind(this)}
-              hideKeyboardHandler={this.hideKeyboard.bind(this)}
-            />
+          <div className="input-console">
+            <div className="input-side-menu">
+              <KeyboardLayout
+                showKeyboard={this.state.showKeyboard}
+                showKeyboardHandler={this.showKeyboard.bind(this)}
+                hideKeyboardHandler={this.hideKeyboard.bind(this)}
+              />
+              { this.displayTypingTip() }
+            </div>
+            <div className="challenge-input-container">
+              <input type="text" onKeyDown={this.handleKeyPress.bind(this)} ref="challengeInput" autoComplete="off"/>
+            </div>
+            <div className="input-side-menu">
+              <KeyFlash
+                lastPressedKey={this.state.lastPressedKey}
+                lastPressedKorChar={this.state.lastPressedKorChar}
+              />
+            </div>
           </div>
-          <div className="challenge-input-container">
-            <input type="text" onKeyDown={this.handleKeyPress.bind(this)} ref="challengeInput" autoComplete="off"/>
-          </div>
-          <div className="input-side-menu">
-            <KeyFlash
-              lastPressedKey={this.state.lastPressedKey}
-              lastPressedKorChar={this.state.lastPressedKorChar}
-            />
+          <div className="input-under-menu">
           </div>
         </div>
       )

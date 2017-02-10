@@ -49,6 +49,10 @@ input:focus {
   outline: none;
 }
 
+.input-console {
+  @include row();
+}
+
 .input-side-menu {
   @include span-columns(3)
 }
@@ -88,7 +92,6 @@ input:focus {
 }
 
 .keyflash-container {
-  @include span-columns(12);
   color: #fff;
   font-family: 'Exo', sans-serif;
   font-size: 1.3rem;
@@ -144,7 +147,6 @@ input:focus {
 }
 
 .key-note-container {
-  margin: 1rem 0;
   font-size: 0.9rem;
 }
 
@@ -156,4 +158,17 @@ input:focus {
   font-size: 3.5rem;
   text-align: center;
   text-shadow: 1px 1px $lightblue;
+}
+
+.input-under-menu {
+  @include row();
+}
+
+.point-right-tooltip {
+  @include span-columns(6);
+  @include shift(6);
+  background-color: #F7ED80;
+  margin-top: 2rem;
+  padding: 0.5rem 0;
+  text-align: center;
 }
