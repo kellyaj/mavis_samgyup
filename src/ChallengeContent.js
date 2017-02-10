@@ -3,6 +3,15 @@ import ChallengeSuccess from './ChallengeSuccess'
 import ChallengeInProgress from './ChallengeInProgress'
 
 class ChallengeContent extends Component {
+  componentWillMount() {
+    this.setState({ challengeBeginning: true })
+  }
+
+  componentDidUpdate() {
+    if(this.state.challengeBeginning) {
+      this.setState({ challengeBeginning: false })
+    }
+  }
 
   determineFeedback() {
     if(this.props.enteredText === this.props.challengeContent) {
@@ -14,6 +23,14 @@ class ChallengeContent extends Component {
             noRemainingChallenges={this.props.noRemainingChallenges}
             correctEntryHandler={this.props.correctEntryHandler}
           />
+        </div>
+      )
+    } else if(this.state.challengeBeginning) {
+      return (
+        <div className="feedback-container">
+          <div className="challenge-in-progress">
+            Challenge started! Start typing the correct keys!
+          </div>
         </div>
       )
     } else {
