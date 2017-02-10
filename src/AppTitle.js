@@ -6,7 +6,7 @@ class AppTitle extends Component {
       <div className="app-title-container">
         <div className="app-main-title">
           <span className="app-logo">
-            <img src="mavisfinalmini.png"></img>
+            <img src="mavis_sep_mini9.png"></img>
           </span>
           <span className="app-primary-title">
             Mavis Samgyeop
