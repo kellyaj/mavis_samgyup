@@ -177,3 +177,10 @@ input:focus {
   padding: 0.5rem 0;
   text-align: center;
 }
+
+.timer-container {
+  @include span-columns(2);
+  @include shift(5);
+  color: #fff;
+  text-align: center;
+}

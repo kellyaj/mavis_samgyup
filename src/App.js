@@ -9,6 +9,7 @@ import KeyFlash from './KeyFlash'
 import KeyboardLayout from './KeyboardLayout'
 import ChallengeSelection from './challenge_selection/ChallengeSelection'
 import AppTitle from './AppTitle'
+import ChallengeTimer from './ChallengeTimer'
 
 class App extends Component {
   componentWillMount() {
@@ -145,6 +146,7 @@ class App extends Component {
       noRemainingChallenges: false,
       correctEntry: false,
       canRestart: true,
+      challengeStartTime: Date.now(),
     })
   }
 
@@ -178,6 +180,8 @@ class App extends Component {
     } else {
       return (
         <div>
+          <ChallengeTimer
+          />
           <ChallengeContent
             challengeContent={this.state.currentChallengeContent}
             challengeTranslation={this.state.currentChallengeTranslation}
