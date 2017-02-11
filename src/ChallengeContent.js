@@ -16,29 +16,23 @@ class ChallengeContent extends Component {
   determineFeedback() {
     if(this.props.enteredText === this.props.challengeContent) {
       return (
-        <div className="feedback-container">
-          <ChallengeSuccess
-            nextChallengeHandler={this.props.nextChallengeHandler}
-            startOverHandler={this.props.startOverHandler}
-            noRemainingChallenges={this.props.noRemainingChallenges}
-            correctEntryHandler={this.props.correctEntryHandler}
-          />
-        </div>
+        <ChallengeSuccess
+          nextChallengeHandler={this.props.nextChallengeHandler}
+          startOverHandler={this.props.startOverHandler}
+          noRemainingChallenges={this.props.noRemainingChallenges}
+          correctEntryHandler={this.props.correctEntryHandler}
+        />
       )
     } else if(this.state.challengeBeginning) {
       return (
-        <div className="feedback-container">
-          <div className="challenge-in-progress">
-            Challenge started! Start typing the correct keys!
-          </div>
+        <div className="challenge-in-progress">
+          Challenge started! Start typing the correct keys!
         </div>
       )
     } else {
       return (
-        <div className="feedback-container">
-          <ChallengeInProgress
-          />
-        </div>
+        <ChallengeInProgress
+        />
       )
     }
   }
@@ -72,7 +66,11 @@ class ChallengeContent extends Component {
     return (
       <div className="challenge-content-container">
         <div className="challenge-category-name">{challengeCategoryName}</div>
-        <div className="challenge-content-feedback">{ this.determineFeedback() }</div>
+        <div className="challenge-content-feedback">
+          <div className="feedback-container">
+            { this.determineFeedback() }
+          </div>
+        </div>
         <div className={`challenge-content ${statusClass}`}>
           <div className="">
             { challengeContent }
