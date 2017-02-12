@@ -514,6 +514,14 @@ module.exports = {
         content: "바",
         english: "ba"
       },
+      {
+        content: "바",
+        english: "ba"
+      },
+      {
+        content: "바",
+        english: "ba"
+      },
     ]
   }
 }

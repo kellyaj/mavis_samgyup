@@ -26,6 +26,7 @@ class App extends Component {
         currentChallengeCategory: undefined,
         canRestart: false,
         showTranslation: true,
+        challengeTimes: [],
       })
     }
   }
@@ -79,6 +80,8 @@ class App extends Component {
   }
 
   nextChallenge() {
+    const finishTime = new Date()
+    const timeToComplete = (finishTime.getTime() - this.state.challengeStartTime.getTime()) / 1000
     this.refs.challengeInput.value = ""
     const newChallengeIndex = this.state.currentChallengeIndex += 1
     const noChallenges = newChallengeIndex === (this.state.currentChallengeCategory.challenges.length - 1)
@@ -88,7 +91,8 @@ class App extends Component {
       currentChallengeTranslation: this.state.currentChallengeCategory.challenges[newChallengeIndex].english,
       enteredText: "",
       noRemainingChallenges: noChallenges,
-      correctEntry: false
+      correctEntry: false,
+      challengeTimes: _.concat(this.state.challengeTimes, timeToComplete),
     })
     this.refs.challengeInput.focus()
   }
@@ -104,6 +108,8 @@ class App extends Component {
       noRemainingChallenges: false,
       correctEntry: false,
       canRestart: true,
+      challengeStartTime: new Date(),
+      challengeTimes: [],
     })
   }
 
@@ -146,7 +152,8 @@ class App extends Component {
       noRemainingChallenges: false,
       correctEntry: false,
       canRestart: true,
-      challengeStartTime: Date.now(),
+      challengeStartTime: new Date(),
+      challengeTimes: [],
     })
   }
 
@@ -193,6 +200,7 @@ class App extends Component {
             startOverHandler={this.startOver.bind(this)}
             correctEntryHandler={this.correctEntry.bind(this)}
             correctEntry={this.state.correctEntry}
+            challengeTimes={this.state.challengeTimes}
           />
           <div className="entered-text-container">{ this.state.enteredText }</div>
           <div className="input-console">

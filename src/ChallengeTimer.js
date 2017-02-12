@@ -8,6 +8,9 @@ class ChallengeTimer extends Component {
     }
   }
 
+  componentWillUpdate() {
+  }
+
   componentDidMount() {
     setTimeout(() => {
       const newTime = this.state.currentTime += 1
@@ -16,10 +19,6 @@ class ChallengeTimer extends Component {
   }
 
   componentDidUpdate() {
-    setTimeout(() => {
-      const newTime = this.state.currentTime += 1
-      this.setState({ currentTime: newTime })
-    }, 1000)
   }
 
   displayTime() {

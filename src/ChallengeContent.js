@@ -21,6 +21,7 @@ class ChallengeContent extends Component {
           startOverHandler={this.props.startOverHandler}
           noRemainingChallenges={this.props.noRemainingChallenges}
           correctEntryHandler={this.props.correctEntryHandler}
+          challengeTimes={this.props.challengeTimes}
         />
       )
     } else if(this.state.challengeBeginning) {

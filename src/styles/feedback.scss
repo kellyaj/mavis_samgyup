@@ -1,0 +1,28 @@
+.success-challenge-time-container {
+  @include row();
+  text-align: center;
+}
+
+.challenge-time-card-container {
+  @include span_columns(1);
+}
+
+.challenge-time-icon {
+  font-size: 1.5rem;
+}
+
+.challenge-time-card-title {
+  font-size: 1rem;
+}
+
+.challenge-good {
+  background-color: lime;
+}
+
+.challenge-ok {
+  background-color: yellow;
+}
+
+.challenge-bad {
+  background-color: red;
+}
