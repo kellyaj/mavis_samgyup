@@ -1,14 +1,18 @@
 .success-challenge-time-container {
   @include row();
   text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .challenge-time-card-container {
   @include span_columns(1);
+
+  border: 1px solid #000;
+  margin-top: 0.5rem;
 }
 
 .challenge-time-icon {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .challenge-time-card-title {
@@ -16,13 +20,13 @@
 }
 
 .challenge-good {
-  background-color: lime;
+  background-color: $green;
 }
 
 .challenge-ok {
-  background-color: yellow;
+  background-color: $yellow;
 }
 
 .challenge-bad {
-  background-color: red;
+  background-color: $red;
 }

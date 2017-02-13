@@ -117,7 +117,7 @@ input:focus {
 }
 
 .entry-success {
-  background-color: #97EB56;
+  background-color: $green;
 }
 
 .entry-not-success {
@@ -184,4 +184,8 @@ input:focus {
   @include shift(5);
   color: #fff;
   text-align: center;
+}
+
+.challenge-content-mini {
+  font-size: 0.8rem;
 }

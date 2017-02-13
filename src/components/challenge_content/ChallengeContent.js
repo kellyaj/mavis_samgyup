@@ -18,11 +18,13 @@ class ChallengeContent extends Component {
       enteredText,
       challengeContent,
       noRemainingChallenges,
+      challenges,
       challengeTimes,
     } = this.props.challengeSession
     if(enteredText === challengeContent) {
       return (
         <ChallengeSuccess
+          challenges={challenges}
           noRemainingChallenges={noRemainingChallenges}
           challengeTimes={challengeTimes}
           nextChallengeHandler={this.props.nextChallengeHandler}

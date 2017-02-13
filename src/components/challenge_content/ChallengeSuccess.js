@@ -18,10 +18,12 @@ class ChallengeSuccess extends Component {
   }
 
   buildTimeCard(time, idx) {
+    const challenge = this.props.challenges[idx]
     return (
       <ChallengeTimeCard
         key={idx}
         time={time}
+        challenge={challenge}
       />
     )
   }
@@ -29,7 +31,7 @@ class ChallengeSuccess extends Component {
   displayChallengeTimes() {
     const timeCards = _.map(this.props.challengeTimes, this.buildTimeCard.bind(this))
     return (
-      <div className="challenge-time-card-list">
+      <div>
         { timeCards }
       </div>
     )

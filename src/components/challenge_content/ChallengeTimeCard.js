@@ -14,14 +14,18 @@ class ChallengeTimeCard extends Component {
   }
 
   render() {
+    const { content } = this.props.challenge
     const { time } = this.props
     return (
       <div className={`challenge-time-card-container ${this.performanceClass()}`}>
+        <div className="challenge-content-mini">
+          { content }
+        </div>
         <div className="challenge-time-icon">
           <i className="fa fa-clock-o"></i>
         </div>
         <div className="challenge-time-card-title">
-          { time }
+          { time }sec
         </div>
       </div>
     )
