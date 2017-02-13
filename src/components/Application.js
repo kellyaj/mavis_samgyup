@@ -71,7 +71,7 @@ class Application extends Component {
       correctEntry,
     } = this.props.challengeSession
     let { enteredText } = this.props.challengeSession
-    if(e.key == "Backspace") {
+    if(e.key == "Backspace" && !correctEntry) {
       return Store.dispatch(ActionCreators.keyPress({
         enteredText: this.assembleHangul(enteredText.slice(0, -1)),
         lastPressedKey: e.key,
@@ -86,13 +86,13 @@ class Application extends Component {
           // bump keep trying
         }
       }
-    } else if (this.allowedCharacter(e.key)) {
+    } else if (this.allowedCharacter(e.key) && !correctEntry) {
       return Store.dispatch(ActionCreators.keyPress({
         enteredText: this.assembleHangul(enteredText += e.key),
         lastPressedKey: e.key,
         lastPressedKorChar: korChar
       }))
-    } else if (korChar) {
+    } else if (korChar && !correctEntry) {
       return Store.dispatch(ActionCreators.keyPress({
         enteredText: this.assembleHangul(enteredText += korChar),
         lastPressedKey: e.key,
