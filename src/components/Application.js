@@ -21,7 +21,7 @@ class Application extends Component {
   }
 
   selectNewChallenge() {
-    return Store.dispatch(ActionCreators.showChallengeSelection)
+    return Store.dispatch(ActionCreators.showChallengeSelection())
   }
 
   makeChallengeSelection(challengeCategory) {

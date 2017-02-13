@@ -1,6 +1,7 @@
 import {
-  RESTART_CHALLENGE,
+  SHOW_CHALLENGE_SELECTION,
   SELECT_CHALLENGE,
+  RESTART_CHALLENGE,
   TOGGLE_TRANSLATIONS,
   NEXT_CHALLENGE,
   TOGGLE_KEYBOARD,
@@ -9,6 +10,10 @@ import {
 } from './ActionTypes'
 
 class ActionCreators {
+  showChallengeSelection() {
+    return { type: SHOW_CHALLENGE_SELECTION }
+  }
+
   selectChallenge(challengeCategory) {
     return {
       type: SELECT_CHALLENGE,

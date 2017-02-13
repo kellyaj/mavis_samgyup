@@ -1,4 +1,5 @@
 import {
+  SHOW_CHALLENGE_SELECTION,
   SELECT_CHALLENGE,
   TOGGLE_TRANSLATIONS,
   TOGGLE_KEYBOARD,
@@ -6,6 +7,10 @@ import {
 
 const uiDataReducer = (uiData = {}, action) => {
   switch(action.type) {
+    case SHOW_CHALLENGE_SELECTION:
+      return Object.assign({}, uiData, {
+        showChallengeSelection: true
+      })
     case SELECT_CHALLENGE:
       return Object.assign({}, uiData, {
         showChallengeSelection: false
