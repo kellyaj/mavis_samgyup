@@ -13,6 +13,13 @@ import letters from '../letters'
 
 class Application extends Component {
 
+  componentDidUpdate() {
+    const { showChallengeSelection } = this.props.uiData
+    if(!showChallengeSelection) {
+      this.refs.challengeInput.focus()
+    }
+  }
+
   selectNewChallenge() {
     return Store.dispatch(ActionCreators.showChallengeSelection)
   }
@@ -71,7 +78,12 @@ class Application extends Component {
       }))
     } else if (e.key == "Enter") {
       if(!noRemainingChallenges) {
-        return correctEntry ? this.nextChallenge() : this.bumpKeepTrying()
+        if(correctEntry) {
+          this.refs.challengeInput.value = ""
+          return Store.dispatch(ActionCreators.nextChallenge())
+        } else {
+          // bump keep trying
+        }
       }
     } else if (this.allowedCharacter(e.key)) {
       return Store.dispatch(ActionCreators.keyPress({
@@ -81,7 +93,7 @@ class Application extends Component {
       }))
     } else if (korChar) {
       return Store.dispatch(ActionCreators.keyPress({
-        enteredText: this.assembleHangul(enteredText += e.key),
+        enteredText: this.assembleHangul(enteredText += korChar),
         lastPressedKey: e.key,
         lastPressedKorChar: korChar
       }))

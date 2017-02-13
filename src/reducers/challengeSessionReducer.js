@@ -9,6 +9,7 @@ import {
 
 const generateFreshSession = (challenges) => {
   return {
+    challenges,
     enteredText: "",
     lastPressedKey: "",
     lastPressedKorChar: "",
@@ -34,27 +35,30 @@ const challengeSessionReducer = (challengeSession = {}, action) => {
     case NEXT_CHALLENGE:
       const newChallengeIndex = challengeSession.currentChallengeIndex += 1
       const noChallenges = newChallengeIndex === (challengeSession.challenges.length - 1)
-      const finishTime = new Date()
-      const timeToComplete = (finishTime.getTime() - challengeSession.challengeStartTime.getTime()) / 1000
       return Object.assign({}, challengeSession, {
         enteredText: "",
         currentChallengeIndex: newChallengeIndex,
         noRemainingChallenges: noChallenges,
-        currentChallengeContent: challengeSession.challenges[newChallengeIndex].content,
-        currentChallengeTranslation: challengeSession.challenges[newChallengeIndex].english,
+        challengeContent: challengeSession.challenges[newChallengeIndex].content,
+        challengeTranslation: challengeSession.challenges[newChallengeIndex].english,
         correctEntry: false,
-        challengeTimes: _.concat(challengeSession.challengeTimes, timeToComplete)
       })
     case KEY_PRESS:
-      const { enteredText, lastPressedKey, lastPressedKorChar } = action
-      const { currentChallengeContent } = challengeSession
-      const newEntryCorrect = currentChallengeContent === enteredText
+      const { enteredText, lastPressedKey, lastPressedKorChar } = action.keyData
+      const { challengeContent, challengeTimes } = challengeSession
+      const newEntryCorrect = challengeContent == enteredText
+      let timeToComplete
+      if(newEntryCorrect) {
+        const finishTime = new Date()
+        timeToComplete = (finishTime.getTime() - challengeSession.challengeStartTime.getTime()) / 1000
+      }
       return Object.assign({}, challengeSession, {
         correctEntry: newEntryCorrect,
         challengeCorrectAt: new Date(),
         enteredText,
         lastPressedKey,
-        lastPressedKorChar
+        lastPressedKorChar,
+        challengeTimes: _.concat(challengeTimes, timeToComplete)
       })
     default:
       return challengeSession
