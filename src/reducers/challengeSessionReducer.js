@@ -39,6 +39,7 @@ const challengeSessionReducer = (challengeSession = {}, action) => {
         enteredText: "",
         lastPressedKey: "",
         lastPressedKorChar: "",
+        challengeStartTime: new Date(),
         currentChallengeIndex: newChallengeIndex,
         noRemainingChallenges: noChallenges,
         challengeContent: challengeSession.challenges[newChallengeIndex].content,
@@ -56,7 +57,6 @@ const challengeSessionReducer = (challengeSession = {}, action) => {
       }
       return Object.assign({}, challengeSession, {
         correctEntry: newEntryCorrect,
-        challengeCorrectAt: new Date(),
         enteredText,
         lastPressedKey,
         lastPressedKorChar,

@@ -99,6 +99,7 @@ describe('challengeSessionReducer', () => {
         lastPressedKorChar: "",
         currentChallengeIndex: 1,
         noRemainingChallenges: false,
+        challengeStartTime: new Date(),
         correctEntry: false,
         challengeContent: content,
         challengeTranslation: english
@@ -124,6 +125,7 @@ describe('challengeSessionReducer', () => {
         lastPressedKorChar: "",
         currentChallengeIndex: 1,
         noRemainingChallenges: true,
+        challengeStartTime: new Date(),
         correctEntry: false,
         challengeContent: content,
         challengeTranslation: english
@@ -152,7 +154,6 @@ describe('challengeSessionReducer', () => {
       ).to.eql({
         correctEntry: true,
         challengeStartTime: new Date(),
-        challengeCorrectAt: new Date(),
         challengeTimes: [],
         lastPressedKey,
         lastPressedKorChar,
@@ -178,7 +179,6 @@ describe('challengeSessionReducer', () => {
       ).to.eql({
         correctEntry: false,
         challengeStartTime: new Date(),
-        challengeCorrectAt: new Date(),
         challengeTimes: [],
         lastPressedKey,
         lastPressedKorChar,
