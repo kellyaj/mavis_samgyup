@@ -64,6 +64,13 @@ class Application extends Component {
     return Hangul.assemble(charCollection)
   }
 
+  handleInputFocusChange() {
+    // locking into input focus loop because of state change and rendering
+    // when used with onBLur and onFocus
+    const { inputIsFocused } = this.props.uiData
+    return Store.dispatch(ActionCreators.toggleRefocusInputTip(!inputIsFocused))
+  }
+
   handleKeyPress(e) {
     const korChar = letters[e.key]
     const {
@@ -172,13 +179,14 @@ class Application extends Component {
   }
 
   render() {
-    const { showChallengeSelection, noticeMessage } = this.props.uiData
+    const { showChallengeSelection, noticeMessage, isInputFocused } = this.props.uiData
     const { canRestart } = this.props.challengeSession
     return (
       <div className="app-container">
         <AppTitle
           inChallengeSelection={showChallengeSelection}
           selectNewChallengeHandler={this.selectNewChallenge.bind(this)}
+          showRefocusTip={isInputFocused}
         />
         <ChallengeOptions
           startOverHandler={this.startOver.bind(this)}

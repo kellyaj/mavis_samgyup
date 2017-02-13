@@ -7,6 +7,7 @@ import {
   TOGGLE_KEYBOARD,
   CORRECT_ENTRY,
   KEY_PRESS,
+  TOGGLE_INPUT_FOCUSED,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -52,6 +53,13 @@ class ActionCreators {
 
   correctEntry() {
     return { type: CORRECT_ENTRY }
+  }
+
+  toggleRefocusInputTip(inputIsFocused) {
+    return {
+      type: TOGGLE_INPUT_FOCUSED,
+      inputIsFocused
+    }
   }
 }
 
