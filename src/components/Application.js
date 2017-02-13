@@ -9,6 +9,7 @@ import KeyboardLayout from './KeyboardLayout'
 import KeyFlash from './KeyFlash'
 import NoticeArea from './NoticeArea'
 import ChallengeSelection from './challenge_selection/ChallengeSelection'
+import TypeHereTip from './tips/TypeHereTip'
 import letters from '../letters'
 
 class Application extends Component {
@@ -103,15 +104,10 @@ class Application extends Component {
   }
 
   displayTypingTip() {
-    // put this into a component
     const { showKeyboard } = this.props.uiData
     if(!showKeyboard) {
       return (
-        <div className="point-right-tooltip">
-          <span>
-            Start typing here! &nbsp;&nbsp;<i className="fa fa-long-arrow-right"></i>&nbsp;
-          </span>
-        </div>
+        <TypeHereTip />
       )
     }
   }
