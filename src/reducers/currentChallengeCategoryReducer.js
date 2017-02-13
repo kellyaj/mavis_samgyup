@@ -5,8 +5,8 @@ import {
 
 const currentChallengeCategoryReducer = (currentChallengeCategory = {}, action) => {
   switch(action.type) {
-    case SELECT_CHALLENGE:
-      return Object.assign({}, currentChallengeCategory, {})
+    case SHOW_CHALLENGE_SELECTION:
+      return {}
     case SELECT_CHALLENGE:
       return Object.assign({}, currentChallengeCategory, action.challengeCategory)
     default:

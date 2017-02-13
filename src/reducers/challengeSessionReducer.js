@@ -37,6 +37,8 @@ const challengeSessionReducer = (challengeSession = {}, action) => {
       const noChallenges = newChallengeIndex === (challengeSession.challenges.length - 1)
       return Object.assign({}, challengeSession, {
         enteredText: "",
+        lastPressedKey: "",
+        lastPressedKorChar: "",
         currentChallengeIndex: newChallengeIndex,
         noRemainingChallenges: noChallenges,
         challengeContent: challengeSession.challenges[newChallengeIndex].content,

@@ -1,15 +1,18 @@
 {
-  "name": "korean_keyboard",
+  "name": "mavis_samgyeop",
   "version": "0.0.1",
   "devDependencies": {
+    "babel-runtime": "^6.22.0",
     "chai": "^3.5.0",
     "enzyme": "^2.7.1",
     "eslint": "^3.14.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-react": "^6.9.0",
+    "mocha": "^3.2.0",
     "redux-devtools": "^3.3.2",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.2.0",
+    "sinon": "^1.17.7",
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
@@ -43,6 +46,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server",
-    "prod": "webpack"
+    "test": "mocha --compilers js:babel-core/register test --recursive || true",
+    "prod": "webpack -p"
   }
 }
