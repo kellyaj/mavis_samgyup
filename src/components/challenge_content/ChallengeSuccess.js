@@ -37,6 +37,12 @@ class ChallengeSuccess extends Component {
     )
   }
 
+  displayTotalTime() {
+    const { overallChallengeStartTime } = this.props
+    const finishTime = new Date()
+    return (finishTime.getTime() - overallChallengeStartTime.getTime()) / 1000
+  }
+
   noRemainingChallengesContent() {
     return (
       <div className="no-challenges-container">
@@ -45,6 +51,7 @@ class ChallengeSuccess extends Component {
           { this.displayChallengeTimes() }
         </div>
         <div onClick={this.props.startOverHandler}>No challenges remain. Click here to start this challenge over.</div>
+        Total Time: { this.displayTotalTime() }
       </div>
     )
   }

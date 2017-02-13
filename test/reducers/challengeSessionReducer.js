@@ -67,6 +67,7 @@ describe('challengeSessionReducer', () => {
         lastPressedKorChar: "",
         currentChallengeIndex: 0,
         challengeStartTime: new Date(),
+        overallChallengeStartTime: new Date(),
         canRestart: true,
         correctEntry: false,
         noRemainingChallenges: false,

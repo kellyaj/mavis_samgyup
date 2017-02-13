@@ -17,6 +17,7 @@ const generateFreshSession = (challenges) => {
     correctEntry: false,
     canRestart: true,
     challengeStartTime: new Date(),
+    overallChallengeStartTime: new Date(),
     challengeTimes: [],
     noRemainingChallenges: false,
     challengeContent: challenges[0].content,
