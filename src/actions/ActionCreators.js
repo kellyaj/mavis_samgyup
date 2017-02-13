@@ -28,10 +28,10 @@ class ActionCreators {
     }
   }
 
-  toggleTranslations(showTranslations) {
+  toggleTranslations(showTranslation) {
     return {
       type: TOGGLE_TRANSLATIONS,
-      showTranslations
+      showTranslation
     }
   }
 

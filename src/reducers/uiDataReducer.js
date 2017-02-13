@@ -16,8 +16,9 @@ const uiDataReducer = (uiData = {}, action) => {
         showChallengeSelection: false
       })
     case TOGGLE_TRANSLATIONS:
+      const { showTranslation } = action
       return Object.assign({}, uiData, {
-        showTranslations: action.showTranslations
+        showTranslation
       })
     case TOGGLE_KEYBOARD:
       return Object.assign({}, uiData, {

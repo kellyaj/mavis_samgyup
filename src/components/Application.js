@@ -29,16 +29,16 @@ class Application extends Component {
   }
 
   toggleTranslations() {
-    const { showTranslations } = this.props.uiData
-    return Store.dispatch(ActionCreators.toggleTranslations(!showTranslations))
+    const { showTranslation } = this.props.uiData
+    return Store.dispatch(ActionCreators.toggleTranslations(!showTranslation))
   }
 
   startOver() {
-    return Store.dispatch(ActionCreators.restartChallenge)
+    return Store.dispatch(ActionCreators.restartChallenge())
   }
 
   nextChallenge() {
-    return Store.dispatch(ActionCreators.nextChallenge)
+    return Store.dispatch(ActionCreators.nextChallenge())
   }
 
   toggleKeyboard() {
@@ -80,7 +80,7 @@ class Application extends Component {
       if(!noRemainingChallenges) {
         if(correctEntry) {
           this.refs.challengeInput.value = ""
-          return Store.dispatch(ActionCreators.nextChallenge())
+          return this.nextChallenge()
         } else {
           // bump keep trying
         }
@@ -177,6 +177,7 @@ class Application extends Component {
 
   render() {
     const { showChallengeSelection, noticeMessage } = this.props.uiData
+    const { canRestart } = this.props.challengeSession
     return (
       <div className="app-container">
         <AppTitle
@@ -187,7 +188,7 @@ class Application extends Component {
           startOverHandler={this.startOver.bind(this)}
           selectNewChallengeHandler={this.selectNewChallenge.bind(this)}
           toggleTranslationsHandler={this.toggleTranslations.bind(this)}
-          canRestart={false}
+          canRestart={canRestart}
         />
         <NoticeArea
           message={noticeMessage}
