@@ -17,13 +17,20 @@ class ChallengeSuccess extends Component {
     )
   }
 
+  determineIfSlowest(time) {
+    const { challengeTimes } = this.props
+    return (Math.max.apply(Math, challengeTimes) == time)
+  }
+
   buildTimeCard(time, idx) {
+    const isSlowest = this.determineIfSlowest(time)
     const challenge = this.props.challenges[idx]
     return (
       <ChallengeTimeCard
         key={idx}
         time={time}
         challenge={challenge}
+        isSlowest={isSlowest}
       />
     )
   }

@@ -13,6 +13,13 @@ class ChallengeTimeCard extends Component {
     }
   }
 
+  displaySlowest() {
+    const { isSlowest } = this.props
+    if(isSlowest) {
+      return "zzz"
+    }
+  }
+
   render() {
     const { content } = this.props.challenge
     const { time } = this.props
@@ -22,7 +29,7 @@ class ChallengeTimeCard extends Component {
           { content }
         </div>
         <div className="challenge-time-icon">
-          <i className="fa fa-clock-o"></i>
+          <i className="fa fa-clock-o"></i> { this.displaySlowest() }
         </div>
         <div className="challenge-time-card-title">
           { time }sec
