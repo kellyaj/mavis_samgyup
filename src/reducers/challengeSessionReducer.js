@@ -58,7 +58,7 @@ const challengeSessionReducer = (challengeSession = {}, action) => {
         enteredText,
         lastPressedKey,
         lastPressedKorChar,
-        challengeTimes: _.concat(challengeTimes, timeToComplete)
+        challengeTimes: _.compact(_.concat(challengeTimes, timeToComplete))
       })
     default:
       return challengeSession
