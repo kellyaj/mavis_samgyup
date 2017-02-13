@@ -1,4 +1,4 @@
-Mavis Samgyeop Teaches Taja(타자)
+![](http://korkb.com/mavis_sep_mini9.png) Mavis Samgyeop Teaches Taja(타자)
 ===============================
 ### a Korean typing and vocabulary trainer
 at [korkb.com](http://korkb.com)
