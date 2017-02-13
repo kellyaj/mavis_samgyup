@@ -191,7 +191,8 @@ input:focus {
 }
 
 .challenge-total-time {
-  background-color: $darkpurp;
+  border: 1px solid #000;
+  background-color: $medpurp;
   color: $yellow;
   padding: 0.5rem;
 }
