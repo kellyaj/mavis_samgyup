@@ -17,7 +17,7 @@ class KeyboardLayout extends Component {
       )
     } else {
       return (
-        <div className="display-keyboard-container" onClick={this.props.showKeyboardHandler}>
+        <div className="display-keyboard-container" onClick={this.props.toggleKeyboardHandler}>
           Show Keyboard
         </div>
       )
