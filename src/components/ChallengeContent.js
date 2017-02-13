@@ -14,17 +14,24 @@ class ChallengeContent extends Component {
   }
 
   determineFeedback() {
-    if(this.props.enteredText === this.props.challengeContent) {
+    const {
+      enteredText,
+      challengeContent,
+      noRemainingChallenges,
+      challengesTimes,
+    } = this.props.challengeSession
+    if(enteredText === challengeContent) {
       return (
         <ChallengeSuccess
+          noRemainingChallenges={noRemainingChallenges}
+          challengeTimes={challengeTimes}
           nextChallengeHandler={this.props.nextChallengeHandler}
           startOverHandler={this.props.startOverHandler}
-          noRemainingChallenges={this.props.noRemainingChallenges}
           correctEntryHandler={this.props.correctEntryHandler}
-          challengeTimes={this.props.challengeTimes}
         />
       )
     } else if(this.state.challengeBeginning) {
+      // put this into a component
       return (
         <div className="challenge-in-progress">
           Challenge started! Start typing the correct keys!
@@ -32,14 +39,14 @@ class ChallengeContent extends Component {
       )
     } else {
       return (
-        <ChallengeInProgress
-        />
+        <ChallengeInProgress />
       )
     }
   }
 
   determineStatusClass() {
-    if(this.props.correctEntry) {
+    const { correctEntry } = this.props.challengeSession
+    if(correctEntry) {
       return "entry-success"
     } else {
       return "entry-not-success"
@@ -47,8 +54,9 @@ class ChallengeContent extends Component {
   }
 
   displayTranslation() {
-    const { challengeTranslation } = this.props
-    if(this.props.showTranslation) {
+    const { challengeTranslation } = this.props.challengeSession
+    const { showTranslation } = this.props.uiData
+    if(showTranslation) {
       return (
         <div className={`challenge-translation`}>
           ( { challengeTranslation } )
@@ -62,7 +70,7 @@ class ChallengeContent extends Component {
       challengeContent,
       challengeTranslation,
       challengeCategoryName
-    } = this.props
+    } = this.props.challengeSession
     const statusClass = this.determineStatusClass()
     return (
       <div className="challenge-content-container">

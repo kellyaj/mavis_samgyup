@@ -5,7 +5,8 @@ const mapStateToProps = (state) => {
   return {
     uiData: state.uiDataReducer,
     challenges: state.challengesReducer,
-    currentChallenge: state.currentChallengeReducer
+    challengeSession: state.challengeSessionReducer,
+    currentChallengeCategory: state.currentChallengeCategoryReducer,
   }
 }
 

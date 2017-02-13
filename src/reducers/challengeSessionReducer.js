@@ -4,20 +4,22 @@ import {
   RESTART_CHALLENGE,
   NEXT_CHALLENGE,
   CORRECT_ENTRY,
+  KEY_PRESS,
 } from '../actions/ActionTypes'
 
 const generateFreshSession = (challenges) => {
   return {
     enteredText: "",
+    lastPressedKey: "",
+    lastPressedKorChar: "",
     currentChallengeIndex: 0,
     correctEntry: false,
     canRestart: true,
     challengeStartTime: new Date(),
     challengeTimes: [],
     noRemainingChallenges: false,
-    currentChallengeContent: challenges[0].content,
-    currentChallengeTranslation: challenges[0].english,
-
+    challengeContent: challenges[0].content,
+    challengeTranslation: challenges[0].english,
   }
 }
 
@@ -42,6 +44,17 @@ const challengeSessionReducer = (challengeSession = {}, action) => {
         currentChallengeTranslation: challengeSession.challenges[newChallengeIndex].english,
         correctEntry: false,
         challengeTimes: _.concat(challengeSession.challengeTimes, timeToComplete)
+      })
+    case KEY_PRESS:
+      const { enteredText, lastPressedKey, lastPressedKorChar } = action
+      const { currentChallengeContent } = challengeSession
+      const newEntryCorrect = currentChallengeContent === enteredText
+      return Object.assign({}, challengeSession, {
+        correctEntry: newEntryCorrect,
+        challengeCorrectAt: new Date(),
+        enteredText,
+        lastPressedKey,
+        lastPressedKorChar
       })
     default:
       return challengeSession

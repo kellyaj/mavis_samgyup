@@ -3,7 +3,10 @@ import Hangul from 'hangul-js'
 import Store from '../store/Store'
 import ActionCreators from '../actions/ActionCreators'
 import AppTitle from './AppTitle'
+import ChallengeContent from './ChallengeContent'
 import ChallengeOptions from './ChallengeOptions'
+import KeyboardLayout from './KeyboardLayout'
+import KeyFlash from './KeyFlash'
 import NoticeArea from './NoticeArea'
 import ChallengeSelection from './challenge_selection/ChallengeSelection'
 import letters from '../letters'
@@ -119,12 +122,17 @@ class Application extends Component {
         showKeyboard,
         showTranslation
       } = this.props.uiData
-      const { enteredText } = this.props.challengeSession
+      const {
+        enteredText,
+        lastPressedKey,
+        lastPressedKorChar,
+      } = this.props.challengeSession
       const { categoryName } = this.props.currentChallengeCategory
       return (
         <div>
           <ChallengeContent
-            challengeSession={challengeSession}
+            challengeSession={this.props.challengeSession}
+            uiData={this.props.uiData}
             challengeCategoryName={categoryName}
             showTranslation={showTranslation}
             nextChallengeHandler={this.nextChallenge.bind(this)}
@@ -146,8 +154,8 @@ class Application extends Component {
           </div>
           <div className="input-side-menu">
             <KeyFlash
-              lastPressedKey={this.state.lastPressedKey}
-              lastPressedKorChar={this.state.lastPressedKorChar}
+              lastPressedKey={lastPressedKey}
+              lastPressedKorChar={lastPressedKorChar}
             />
           </div>
         </div>
