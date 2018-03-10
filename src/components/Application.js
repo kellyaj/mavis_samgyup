@@ -120,9 +120,235 @@ class Application extends Component {
   }
 
   displayMainContent() {
-    // probably time to split this into some components, maybe consider future challenge types/journeys
     const { showChallengeSelection } = this.props.uiData
-    const { challenges } = this.props
+    const storyChallenges = {
+      "": {
+        acts: [
+          {
+            title: "",
+            previewImageUrl: "",
+            previewIconClass: "",
+            previewPhrase: "",
+            steps: [
+              {
+                displayOrder: 1,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 2,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 3,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 4,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 5,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+            ]
+          },
+          {
+            title: "",
+            previewImageUrl: "",
+            previewIconClass: "",
+            previewPhrase: "",
+            steps: [
+              {
+                displayOrder: 1,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 2,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 3,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 4,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 5,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+            ]
+          },
+          {
+            title: "",
+            previewImageUrl: "",
+            previewIconClass: "",
+            previewPhrase: "",
+            steps: [
+              {
+                displayOrder: 1,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 2,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 3,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 4,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+              {
+                displayOrder: 5,
+                stepImageUrl: "",
+                stepIconClass: "",
+                stepMainContent: "",
+                stepPrompt: "",
+                stepChoices: [
+                  { choiceContent: "", correct: true },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                  { choiceContent: "", correct: false },
+                ]
+              },
+            ]
+          }
+        ]
+      }
+    }
+    const {
+      challenges
+    } = this.props
     if(showChallengeSelection) {
       return (
         <div className="challenge-selection-container">
